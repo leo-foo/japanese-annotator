@@ -1,10 +1,5 @@
-import * as React from 'react'
-import styles from './styles.module.css'
+// import * as React from 'react'
+import './styles.module.css'
+import { JapaneseAnnotator } from './components/JapaneseAnnotator'
 
-interface Props {
-  text: string
-}
-
-export const ExampleComponent = ({ text }: Props) => {
-  return <div className={styles.test}>Example Component: {text}</div>
-}
+export { JapaneseAnnotator }

@@ -1,0 +1,8 @@
+{
+  "root": "public/",
+  "routes": {
+    "/dict/*": {
+      "cache": true
+    }
+  }
+}

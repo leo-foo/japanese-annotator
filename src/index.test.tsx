@@ -1,7 +1,7 @@
-import { ExampleComponent } from '.'
+import { JapaneseAnnotator } from '.'
 
-describe('ExampleComponent', () => {
+describe('JapaneseAnnotatorComponent', () => {
   it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
+    expect(JapaneseAnnotator).toBeTruthy()
   })
 })

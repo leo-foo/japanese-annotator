@@ -1,10 +1,13 @@
 import React from 'react'
 
-import { ExampleComponent } from 'japanese-annotator'
+import { JapaneseAnnotator } from 'japanese-annotator'
 import 'japanese-annotator/dist/index.css'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  return (<JapaneseAnnotator type='romaji'
+    // children='座禅‘zazen’スタイル'
+    children='私が送った文を日本語してください'
+     />)
 }
 
 export default App
