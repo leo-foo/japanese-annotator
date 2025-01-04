@@ -51,18 +51,23 @@ export const generateAnnotations = (
   })
 }
 export const generateFuriganaAnnotationsAsync = async (
-  parsedText: string[]
+  parsedText: string[],
+  type: 'furigana' | 'romaji'
 ): Promise<[string, string][]> => {
   kuroshiro = kuroshiro || (await initializeKuroshiro())
 
   // Use Promise.all to handle the array of promises
   const annotations = await Promise.all(
-    parsedText.map(async (char) => {
-      if (!isKanji(char)) return [char, ''] as [string, string]
+    parsedText.map(async (char): Promise<[string, string]> => {
+      if (!isKanji(char)) return [char, '']
 
       const furigana = await convertToFurigana(char)
-      console.log('char', char, furigana)
-      return [char, furigana] as [string, string]
+
+      if (type === 'romaji') {
+        const romaji = toRomaji(furigana)
+        return [char, romaji]
+      }
+      return [char, furigana]
     })
   )
   return annotations

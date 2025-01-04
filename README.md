@@ -13,17 +13,23 @@ npm install --save japanese-annotator
 ## Usage
 
 ```tsx
-import React, { Component } from 'react'
+import React from 'react'
 
-import MyComponent from 'japanese-annotator'
+import { JapaneseAnnotator } from 'japanese-annotator'
 import 'japanese-annotator/dist/index.css'
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+const App = () => {
+  return (
+    <JapaneseAnnotator
+      type='furigana'
+      children='私が送った文を日本語してください'
+    />
+  )
 }
+export default App
 ```
+
+![alt text](public/image.png)
 
 ## License
 

@@ -4,10 +4,13 @@ import { JapaneseAnnotator } from 'japanese-annotator'
 import 'japanese-annotator/dist/index.css'
 
 const App = () => {
-  return (<JapaneseAnnotator type='romaji'
-    // children='座禅‘zazen’スタイル'
+  return (
+  <div style={{ display: 'inline-block', margin: '32px', padding: '16px', backgroundColor: '#efefef', borderRadius: '8px' }}>
+  <JapaneseAnnotator type='furigana'
     children='私が送った文を日本語してください'
-     />)
+     />
+     </div>
+     )
 }
 
 export default App

@@ -18,14 +18,13 @@ export const JapaneseAnnotator: React.FC<AnnotatorProps> = ({
     throw new Error('Children must be a string containing Japanese text')
   }
 
-  // const parsedText = parseText(children)
-  // const annotations = generateAnnotations(parsedText, type)
   const [annotations, setAnnotations] = useState<[string, string][]>([])
   useEffect(() => {
     const fetchAnnotations = async () => {
       const parsedText = parseText(children)
       const generatedAnnotations = await generateFuriganaAnnotationsAsync(
-        parsedText
+        parsedText,
+        type
       )
       setAnnotations(generatedAnnotations)
     }
