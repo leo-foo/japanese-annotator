@@ -1,6 +1,6 @@
 {
   "name": "japanese-annotator",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "description": "A lightweight and customizable library for adding Furigana or Romaji annotations to Japanese text, supporting React components and utility methods for easy integration.",
   "keywords": ["japanese", "romaji", "furigana", "react", "react-component"],
   "author": "",
@@ -62,7 +62,8 @@
   },
   "files": [
     "dist",
-    "dict"
+    "dict",
+     "public"
   ],
   "dependencies": {
     "deconstruct-japanese": "^1.4.3",

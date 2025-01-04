@@ -29,7 +29,7 @@ const App = () => {
 export default App
 ```
 
-![alt text](public/image.png)
+![alt text](https://raw.githubusercontent.com/leo-foo/japanese-annotator/main/public/demo.png)
 
 ## License
 
