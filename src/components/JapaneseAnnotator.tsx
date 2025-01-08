@@ -6,12 +6,14 @@ import { generateFuriganaAnnotationsAsync } from '../utils/generateAnnotations'
 type AnnotatorProps = {
   children: React.ReactNode
   style?: React.CSSProperties
+  annotationStyle?: React.CSSProperties
   type?: 'furigana' | 'romaji'
 }
 
 export const JapaneseAnnotator: React.FC<AnnotatorProps> = ({
   children,
   style = {},
+  annotationStyle = {},
   type = 'furigana'
 }) => {
   if (typeof children !== 'string') {
@@ -33,11 +35,22 @@ export const JapaneseAnnotator: React.FC<AnnotatorProps> = ({
   }, [children, type])
 
   return (
-    <div style={{ ...style, display: 'inline-block' }}>
+    <div style={{ display: 'inline-block', lineHeight: '2', ...style }}>
       {annotations.map(([char, annotation], idx) => (
         <ruby key={idx}>
           {char}
-          {annotation && <rt>{annotation}</rt>}
+          {annotation && (
+            <rt
+              style={{
+                fontSize: '8px',
+                color: '#666',
+                fontWeight: 'bold',
+                ...annotationStyle
+              }}
+            >
+              {annotation}
+            </rt>
+          )}
         </ruby>
       ))}
     </div>

@@ -4,6 +4,13 @@
 
 [![NPM](https://img.shields.io/npm/v/japanese-annotator.svg)](https://www.npmjs.com/package/japanese-annotator) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+## todo
+
+- Add more usage examples
+- Solve the problem of dict file loading
+- Provide js conversion function
+- Optimize init speed
+
 ## Install
 
 ```bash
