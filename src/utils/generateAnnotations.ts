@@ -9,7 +9,8 @@ let kuroshiro: any = null
 const initializeKuroshiro = async () => {
   console.log('initializing Kuroshiro...')
   const kuroshiro = new Kuroshiro()
-  const dictPath = './dict/'
+  const dictPath = 'https://leo-foo.github.io/japanese-dict/dict/'
+  // const dictPath = './dict/'
   await kuroshiro.init(
     new KuromojiAnalyzer({ dictPath: dictPath }, function (err: any) {
       console.log('init', err)
