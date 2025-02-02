@@ -7,7 +7,6 @@ import KuromojiAnalyzer from 'kuroshiro-analyzer-kuromoji'
 
 let kuroshiro: any = null
 const initializeKuroshiro = async () => {
-  console.log('initializing Kuroshiro...')
   const kuroshiro = new Kuroshiro()
   const dictPath = 'https://leo-foo.github.io/japanese-dict/dict/'
   // const dictPath = './dict/'
@@ -28,10 +27,8 @@ const initializeKuroshiro = async () => {
 // 转换函数
 export const convertToFurigana = async (text: string): Promise<string> => {
   try {
-    console.log('converting text...', text)
     kuroshiro = kuroshiro || (await initializeKuroshiro())
     const result = await kuroshiro.convert(text, { to: 'hiragana' })
-    console.log('result', result)
 
     return result
   } catch (error) {
@@ -46,18 +43,28 @@ export const generateAnnotations = (
 ): [string, string][] => {
   return parsedText.map((char) => {
     if (!isKanji(char)) return [char, '']
-    console.log('char', char, toHiragana(char), toRomaji(char))
     const annotation = type === 'furigana' ? toHiragana(char) : toRomaji(char)
     return [char, annotation]
   })
 }
+
+export const switchAnnotationsType = (
+  annotations: [string, string][],
+  type: 'furigana' | 'romaji'
+): [string, string][] => {
+  return annotations.map(([char, a]) => {
+    if (!a) return [char, '']
+    const annotation = type === 'furigana' ? toHiragana(a) : toRomaji(a)
+    return [char, annotation]
+  })
+}
+
 export const generateFuriganaAnnotationsAsync = async (
   parsedText: string[],
   type: 'furigana' | 'romaji'
 ): Promise<[string, string][]> => {
   kuroshiro = kuroshiro || (await initializeKuroshiro())
 
-  // Use Promise.all to handle the array of promises
   const annotations = await Promise.all(
     parsedText.map(async (char): Promise<[string, string]> => {
       if (!isKanji(char)) return [char, '']

@@ -1,8 +1,14 @@
 {
   "name": "japanese-annotator",
-  "version": "0.1.6",
+  "version": "0.2.1",
   "description": "A lightweight and customizable library for adding Furigana or Romaji annotations to Japanese text, supporting React components and utility methods for easy integration.",
-  "keywords": ["japanese", "romaji", "furigana", "react", "react-component"],
+  "keywords": [
+    "japanese",
+    "romaji",
+    "furigana",
+    "react",
+    "react-component"
+  ],
   "author": "",
   "license": "MIT",
   "repository": "/japanese-annotator",
@@ -37,11 +43,10 @@
     "@types/node": "^12.12.38",
     "@types/react": "^16.9.27",
     "@types/react-dom": "^16.9.7",
-    "@typescript-eslint/eslint-plugin": "^2.26.0",
-    "@typescript-eslint/parser": "^2.26.0",
-    "babel-eslint": "^10.0.3",
+    "@typescript-eslint/eslint-plugin": "^8.22.0",
+    "@typescript-eslint/parser": "^8.22.0",
     "cross-env": "^7.0.2",
-    "eslint": "^6.8.0",
+    "eslint": "^9.19.0",
     "eslint-config-prettier": "^6.7.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-config-standard-react": "^9.2.0",
@@ -63,7 +68,7 @@
   "files": [
     "dist",
     "dict",
-     "public"
+    "public"
   ],
   "dependencies": {
     "deconstruct-japanese": "^1.4.3",
